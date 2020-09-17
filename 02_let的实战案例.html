@@ -1,0 +1,61 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-17 10:37:33
+ * @LastEditTime: 2020-09-17 11:02:27
+ * @FilePath: \GSG-ES6-ES11\02_let的实战案例.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02_let的实战案例</title>
+    <style>
+        .page-header {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .item {
+            float: left;
+            padding: 20px 30px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <script>
+        // 获取div元素对象
+        let items = document.getElementsByClassName('item');
+
+        // 遍历并绑定事件
+        for (let i = 0; i < items.length; i++) {
+            items[i].onclick = function () {
+                // 修改当前元素的背景颜色
+                // this.style.background = 'pink';
+
+                // DOM事件回调是个宏队列，会先保存不执行，如果用var声明是全局作用，执行回调函数的时候，作用链里面找不到i，向上级块找，此时的i已经为3，所以不起任何作用
+                // 如果用let声明是块级作用域，相当于声明了三个独立的块作用局，此时执行回调函数的时候，向上级找就能找到对应的i了
+                // { let i = 0 }
+                // { let i = 1 }
+                // { let i = 2 }
+                items[i].style.background = 'pink';
+            }
+            console.log(i);
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-17 10:23:38
+ * @LastEditTime: 2020-09-17 10:32:44
+ * @FilePath: \GSG-ES6-ES11\01_let.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=https://www.bilibili.com/video/BV1uK411H7on?t=143, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01_let</title>
+</head>
+
+<body>
+    <script>
+        // 声明变量
+        let a;
+        let b, c, d;
+        let e = 100;
+        let f = 521, g = 'loveyou', h = [];
+
+        // 1. 变量不能重复声明
+        // let star = '罗志祥';
+        // let star = '小猪';
+        //Uncaught SyntaxError: Identifier 'star' has already been declared
+
+        // 2. 块级作用域 全局，函数，eval
+        // if else while for
+        // {
+        //     let girl = '周扬青'
+        // }
+        // console.log(girl); // Uncaught ReferenceError: girl is not defined
+
+        // 3. 不存在变量提升
+        // console.log(song);
+        // // let 声明的时候 输出：Uncaught ReferenceError: Cannot access 'song' before initialization
+        // // var 声明的时候 输出：undefined
+        // var song = '恋爱达人'
+
+
+        // 4. 不影响作用域链
+        {
+            let school = '尚硅谷';
+            function fn() {
+                console.log(school);
+            }
+            fn();
+            // 在函数作用域里面找不到school，会向上级块找
+        }
+    </script>
+</body>
+
+</html>
