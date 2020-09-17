@@ -1,0 +1,61 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-17 13:44:14
+ * @LastEditTime: 2020-09-17 14:03:18
+ * @FilePath: \GSG-ES6-ES11\08_箭头函数实战案例.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08_箭头函数实战案例</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ad"></div>
+</body>
+<script>
+    // 需求1 点击div 2s后颜色变成粉色
+    // 获取元素
+    let ad = document.getElementById('ad');
+    // 绑定事件
+    ad.addEventListener('click', function () {
+        // const _this = this;// 保存下来  指向事件源ad
+        // setTimeout(function () {
+        //     console.log(this);  // 此时this指向的是window
+        //     _this.style.background = 'pink' // _this找不到就会向外层作用域找，就可以了
+        // }, 2000)
+        setTimeout(() => {// 箭头函数的this指向是  声明箭头函数时所在作用域下的this
+            this.style.background = 'pink';
+        }, 1000)
+    })
+    // 需求2 从数组中返回偶数的元素
+    const arr = [1, 6, 9, 10, 100, 25];
+    const result = arr.filter(function (item) {
+        if (item % 2 === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    console.log(result);
+
+    const result2 = arr.filter(item => item % 2 === 0)
+    console.log(result2);
+
+    // 箭头函数适合与 this 无关的回调，定时器，数组的方法回调
+    // 箭头函数不适合与 this 有关的回调，事件回调，对象的方法
+</script>
+
+</html>
