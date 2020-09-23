@@ -1,0 +1,44 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-21 11:07:24
+ * @LastEditTime: 2020-09-21 11:27:18
+ * @FilePath: \GSG-ES6-ES11\13_Symbol.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13_Symbol</title>
+</head>
+
+<body>
+    <script>
+        // 创建Symbol
+        let s = Symbol();
+        console.log(s, typeof s);
+        let s2 = Symbol('123');
+        let s3 = Symbol('123');
+        console.log(s2 == s3); // false
+        // Symbol.for 创建
+        let s4 = Symbol.for('12');
+        let s5 = Symbol.for('12');
+        console.log(s4 == s5); //  true
+
+        // 不能与其他数据进行运算
+        // let result = s + 100; // Uncaught TypeError: Cannot convert a Symbol value to a number 
+
+        // USONB
+        // u nudefined
+        // s string symbol
+        // o object
+        // n number null
+        // b boolean
+    </script>
+
+</body>
+
+</html>

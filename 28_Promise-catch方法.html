@@ -1,0 +1,37 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-23 11:17:13
+ * @LastEditTime: 2020-09-23 11:23:42
+ * @FilePath: \GSG-ES6-ES11\28_Promise-catch方法.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>28_Promise-catch方法</title>
+</head>
+
+<body>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // 设置 p 对象的状态为失败， 并设置失败的值
+                reject('出错了')
+            }, 1000);
+        })
+
+        p.then(value => { }, reason => {
+            console.log(reason);
+        })
+
+        p.catch(reason => {
+            console.log(reason);
+        })
+    </script>
+</body>
+
+</html>

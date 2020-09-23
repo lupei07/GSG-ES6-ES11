@@ -1,0 +1,51 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-22 10:29:31
+ * @LastEditTime: 2020-09-22 10:39:45
+ * @FilePath: \GSG-ES6-ES11\18_迭代器自定义遍历对象.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18_迭代器自定义遍历对象</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个对象
+        const banji = {
+            name: '终极一班',
+            stus: ['xiaoming', 'xiaoning', 'xiaoxiao', 'keke'],
+            [Symbol.iterator]() {
+                // 索引变量
+                let index = 0;
+                const _this = this;
+                return {
+                    next: function () {
+                        if (index < _this.stus.length) {
+                            const result = { value: _this.stus[index], done: false }
+                            // 小标自增
+                            index++;
+                            return result;
+                        } else {
+                            return { value: undefined, done: true }
+                        }
+                    }
+                }
+            }
+        }
+        // 遍历这个对象
+        for (let v of banji) {
+            console.log(v);
+        }
+
+        // banji.stus.forEach()
+    </script>
+</body>
+
+</html>

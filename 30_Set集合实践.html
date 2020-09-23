@@ -1,0 +1,45 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-23 13:30:59
+ * @LastEditTime: 2020-09-23 13:57:17
+ * @FilePath: \GSG-ES6-ES11\30_Set集合实践.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>30_Set集合实践</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5, 4, 3, 2, 1];
+        // 1. 数组去重
+        const result1 = [...new Set(arr)];
+        console.log(result1); //  [1, 2, 3, 4, 5]
+        // 2. 交集
+        const arr2 = [4, 5, 6, 5, 6];
+        // let result2 = [...new Set(arr)].filter(item => {
+        //     let s2 = new Set(arr2)
+        //     if (s2.has(item)) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // })
+        let result2 = [...new Set(arr)].filter(item => new Set(arr2).has(item))
+        console.log(result2);   //[4, 5]
+        // 3. 并集
+        let result3 = [...arr, ...arr2];
+        console.log([...new Set(result3)]); //  [1, 2, 3, 4, 5, 6]
+        // 4. 差集
+        let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)))
+        console.log(diff);  // [1, 2, 3]
+    </script>
+</body>
+
+</html>

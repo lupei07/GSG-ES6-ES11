@@ -1,0 +1,53 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-21 13:29:54
+ * @LastEditTime: 2020-09-21 14:00:26
+ * @FilePath: \GSG-ES6-ES11\14_Symbol创建对象属性.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>14_Symbol创建对象属性</title>
+</head>
+
+<body>
+    <script>
+        // symbol作用：表示独一无二的值
+        // 像对象中添加方法 up  down
+        let game = {
+            up: function () { },
+            name: '俄罗斯方块'
+        }
+
+        // 声明一个对象
+        let methods = {
+            up: Symbol(),
+            down: Symbol()
+        }
+
+        game[methods.up] = function () {
+            console.log('我可以改变形状');
+        }
+        game[methods.down] = function () {
+            console.log('我可以快速下降！！');
+        }
+        console.log(game);
+        game[methods.up]();
+
+        let youxi = {
+            name: '狼人杀',
+            [Symbol('say')]: function () {
+                console.log('我可以发言');
+            }
+        }
+
+        console.log(youxi);
+    </script>
+</body>
+
+</html>

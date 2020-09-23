@@ -1,0 +1,37 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-22 11:22:21
+ * @LastEditTime: 2020-09-22 14:23:40
+ * @FilePath: \GSG-ES6-ES11\20_生成器函数参数.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>20_生成器函数参数</title>
+</head>
+
+<body>
+    <script>
+        function* gen(arg) {
+            console.log(arg);
+            let one = yield 111;
+            console.log(one);
+            yield 222;
+            yield 333;
+        }
+
+        // 执行获取迭代器对象
+        let iterator = gen('AAA');
+        console.log(iterator.next());
+        // next方法可以传入实参
+        console.log(iterator.next('BBB'));
+        console.log(iterator.next());
+    </script>
+</body>
+
+</html>

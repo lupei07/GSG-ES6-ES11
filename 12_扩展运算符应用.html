@@ -1,0 +1,43 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-21 11:01:34
+ * @LastEditTime: 2020-09-21 11:06:34
+ * @FilePath: \GSG-ES6-ES11\12_扩展运算符应用.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>12_扩展运算符应用</title>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        // 1. 数组的合并
+        const kuaizi = ['王太利', '肖央'];
+        const fenghuang = ['曾毅', '玲花'];
+        // const zuixuanxiaopingguo = kuaizi.concat(fenghuang);
+        const zuixuanxiaopingguo = [...kuaizi, ...fenghuang];
+        console.log(zuixuanxiaopingguo);
+
+        // 2. 数组的克隆
+        const sanzhihua = ['E', 'G', 'M'];
+        const sanyecao = [...sanzhihua]; // 浅拷贝
+        console.log(sanyecao);
+
+        // 3. 将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr); // arguments
+    </script>
+</body>
+
+</html>

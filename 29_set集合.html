@@ -1,0 +1,48 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-23 13:30:59
+ * @LastEditTime: 2020-09-23 13:43:42
+ * @FilePath: \GSG-ES6-ES11\29_set集合.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>29_set集合</title>
+</head>
+
+<body>
+    <script>
+        /*
+        ES6 提供了新的数据结构 Set（集合）。它类似于数据，但成员的值都是唯一的，集合实现了iterator接口，
+        所以可以使用【for...of...】进行遍历，集合的属性和方法：
+        1）size 返回集合的元素个数
+        2）add 增加一个新元素，返回当前集合
+        3）delete 删除元素，返回boolean值
+        4）has 检测集合中是否包含某元素，返回 Boolean 值
+        5）clear 清空集合
+        */
+
+        // 声明一个 set
+        let s = new Set();
+
+        console.log(s, typeof s);//Set(0) {} "object"\
+
+        let s2 = new Set(['好事', '坏事', '大事', '小事', '喜事', '坏事'])
+        console.log(s2);    // Set(5) {"好事", "坏事", "大事", "小事", "喜事"}
+
+        console.log(s2.size);   // 5
+        console.log(s2.add('没事'));
+        console.log(s2.has('好事'));    // true
+        console.log(s2.delete('坏事')); // true
+        console.log(s2);    //Set(5) {"好事", "大事", "小事", "喜事", "没事"}
+        s2.clear();
+        console.log(s2);    // Set(0) {}
+    </script>
+</body>
+
+</html>

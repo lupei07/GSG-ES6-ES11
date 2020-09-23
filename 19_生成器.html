@@ -1,0 +1,42 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-22 10:40:51
+ * @LastEditTime: 2020-09-22 11:17:05
+ * @FilePath: \GSG-ES6-ES11\19_生成器.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>19_生成器</title>
+</head>
+
+<body>
+    <script>
+        // 生成器函数时ES6提供的一种异步编程解决方案，语法行为与传统函数完全不同
+        // 纯回调函数 node ajax mongodb
+        // yield 函数代码的分隔符
+        function* gen() {
+            console.log(123);
+            yield '一只没有耳朵';
+            yield '一只没有尾巴';
+            yield '真奇怪';
+        }
+        let iterator = gen()
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+
+        // 遍历
+        for (let v of gen()) {
+            console.log(v);
+        }
+
+    </script>
+</body>
+
+</html>

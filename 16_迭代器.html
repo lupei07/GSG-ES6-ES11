@@ -1,0 +1,44 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-21 14:10:10
+ * @LastEditTime: 2020-09-21 14:36:02
+ * @FilePath: \GSG-ES6-ES11\16_迭代器.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16_迭代器</title>
+</head>
+
+<body>
+    <script>
+        // 声明一个数组
+        const xiyou = ['唐僧', '孙悟空', '猪八戒', '沙僧'];
+
+        for (var v of xiyou) {
+            console.log(v);
+        }
+
+        // 原理
+        /*
+        1. 创建一个指针对象，指向当前数据结构的起始位置
+        2. 第一次调用对象的next方法，指针自动指向数据结构的第一个成员
+        3. 接下来不断调用next方法，指针一直往后移动，直到指向最有一个成功
+        4. 每调用next方法返回一个包含value和done属性的对象
+         */
+        let iterator = xiyou[Symbol.iterator]();
+        console.log(iterator);
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());
+        console.log(iterator.next());   //{done: false, value: '沙僧'}
+        console.log(iterator.next());   //{done: true, value: undefined}
+    </script>
+</body>
+
+</html>

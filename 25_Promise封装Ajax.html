@@ -1,0 +1,55 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-22 15:48:31
+ * @LastEditTime: 2020-09-22 17:22:45
+ * @FilePath: \GSG-ES6-ES11\25_Promise封装Ajax.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>25_Promise封装Ajax</title>
+</head>
+
+<body>
+    <script>
+        // 接口地址：https://aip.apiopen.top/getJoke
+        const p = new Promise(function (resolve, reject) {
+            // 1. 创建对象
+            const xhr = new XMLHttpRequest();
+            // 2. 初始化
+            xhr.open('GET', 'https://aip.apiopen.top/getJoke');
+            // 3. 发送
+            xhr.send();
+            // 4. 绑定时间，处理响应结果
+            xhr.onreadystatechange = function () {
+                // 判断
+                if (xhr.readyState === 4) {
+                    // 判断响应状态码 200-299
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        // 成功
+                        resolve(xhr.response)
+                        console.log(xhr.response);
+                    } else {
+                        // 失败
+                        reject(xhr.status)
+                        console.log(xhr.status);
+                    }
+                }
+            }
+
+        })
+
+        p.then(function (value) {
+            console.log(value);
+        }, function (reason) {
+            console.log(reason);
+        })
+    </script>
+</body>
+
+</html>

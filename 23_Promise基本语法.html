@@ -1,0 +1,39 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-22 15:03:21
+ * @LastEditTime: 2020-09-22 15:06:05
+ * @FilePath: \GSG-ES6-ES11\23_Promise基本语法.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>23_Promise基本语法</title>
+</head>
+
+<body>
+    <script>
+        // 实例化  Promise 对象
+        const p = new Promise(function (resolve, reject) {
+            setTimeout(() => {
+                // let data = '数据库中的用户数据';
+                // resolve(data)
+                let data = '失败了'
+                reject(data)
+            })
+        })
+
+        // 调用 promise 对象的then方法
+        p.then(function (value) {
+            console.log(value);
+        }, function (reason) {
+            console.error(reason);
+        })
+    </script>
+</body>
+
+</html>
