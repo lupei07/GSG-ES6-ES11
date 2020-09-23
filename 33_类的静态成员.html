@@ -1,0 +1,53 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-23 14:55:58
+ * @LastEditTime: 2020-09-23 15:12:01
+ * @FilePath: \GSG-ES6-ES11\33_类的静态成员.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=32_class类, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>33_类的静态成员</title>
+</head>
+
+<body>
+    <script>
+        /*
+        实例对象和函数对象的属性是不相通的
+        实例对象和构造函数原型对象是相通的
+        */
+        function Phone() {
+
+        }
+        // name change 是函数对象的属性 实例对象不能访问 称之为静态成员
+        // 实例成员，只能由实例化的对象来访问
+        // 静态成员，只能由构造函数本身来访问
+        Phone.name = '手机';
+        Phone.change = function () {
+            console.log('我可以改变世界！');
+        }
+        Phone.prototype.size = '5.5inch';
+        let nokia = new Phone();
+        console.log(nokia.name);// undefined
+        console.log(nokia.size);// 5.5inch
+
+        class Shouji {
+            // 静态属性
+            static name = '手机';
+            static change() {
+                console.log('我也可以改变世界');
+            }
+        }
+        let nokia1 = new Shouji();
+        console.log(nokia1.name);   // undefined
+        console.log(Shouji.name);   // 手机
+        console.log(Shouji.change);
+    </script>
+</body>
+
+</html>

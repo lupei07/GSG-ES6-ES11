@@ -1,0 +1,59 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-23 16:01:41
+ * @LastEditTime: 2020-09-23 16:07:53
+ * @FilePath: \GSG-ES6-ES11\35_类继承.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>35_类继承</title>
+</head>
+
+<body>
+    <script>
+        class Phone {
+            // 构造方法
+            constructor(brand, price) {
+                this.brand = brand;
+                this.price = price;
+            }
+            // 父类的成员属性
+            call() {
+                console.log('我可以打电话');
+            }
+        }
+
+        class SmartPhone extends Phone {
+            // 构造方法
+            constructor(brand, price, color, size) {
+                // 调用父类的构造方法作为初始化
+                super(brand, price);    // Phone.call(this,brand,price)
+                this.color = color;
+                this.size = size;
+            }
+            photo() {
+                console.log('拍照');
+            }
+            playGame() {
+                console.log('游戏');
+            }
+        }
+
+        const xiaomi = new SmartPhone('小米', 899, '黑色', '4.7');
+        console.log(xiaomi);
+        xiaomi.call();
+        xiaomi.photo();
+        xiaomi.playGame();
+
+
+
+    </script>
+</body>
+
+</html>
