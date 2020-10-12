@@ -1,0 +1,31 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-10-12 16:48:28
+ * @LastEditTime: 2020-10-12 16:54:53
+ * @FilePath: \GSG-ES6-ES11\46_正则扩展-反向断言.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>46_正则扩展-反向断言</title>
+</head>
+
+<body>
+    <script>
+        let str = 'JS521314你知道吗555啦啦啦';
+        // 正向断言
+        // const reg = /\d+(?=啦)/;
+        // const result = reg.exec(str)
+        // 反向断言
+        const reg = /(?<=吗)\d+/
+        const result = reg.exec(str)
+        console.log(result);
+    </script>
+</body>
+
+</html>

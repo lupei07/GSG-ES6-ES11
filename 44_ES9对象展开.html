@@ -1,0 +1,43 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-10-12 16:16:25
+ * @LastEditTime: 2020-10-12 16:29:36
+ * @FilePath: \GSG-ES6-ES11\44_ES9对象展开.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>44_ES9对象展开</title>
+</head>
+
+<body>
+    <!-- 
+        Rest 参数与 spread 扩展运算符在 ES6 中已经引入，不过 ES6 中只针对数组，
+        在 ES9 中为对象提供了像数组一样的 rest 参数和扩展运算符
+    -->
+    <script>
+        function connect({ host, post, ...user }) {
+            console.log(host);
+            console.log(post);
+            console.log(user);
+        }
+        connect({
+            host: '127.0.0.1',
+            post: 8000,
+            username: 'root',
+            password: 'root',
+        });
+
+        const one = { name: 'SGG' }
+        const two = { age: '10' }
+        const result = { ...one, ...two }
+        console.log(result);
+    </script>
+</body>
+
+</html>

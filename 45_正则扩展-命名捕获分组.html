@@ -1,0 +1,33 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-10-12 16:29:19
+ * @LastEditTime: 2020-10-12 16:40:31
+ * @FilePath: \GSG-ES6-ES11\45_正则扩展-命名捕获分组.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>45_正则扩展-命名捕获分组</title>
+</head>
+
+<body>
+    <script>
+        // 提取 url 和 文本
+        const str = '<a href="http://www.atguigu.com">尚硅谷</a>';
+        const reg = /<a href="(.*)">(.*)<\/a>/;
+        const result = reg.exec(str);
+        console.log(result[1], result[2]);
+
+        const reg1 = /<a href="(?<url>.*)">(?<text>.*)<\/a>/;
+        const result1 = reg1.exec(str);
+        console.log(result1);
+        console.log(result1.groups.url, result1.groups.text);
+    </script>
+</body>
+
+</html>
