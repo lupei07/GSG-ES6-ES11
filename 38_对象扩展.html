@@ -1,0 +1,49 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-24 13:10:55
+ * @LastEditTime: 2020-09-24 13:19:33
+ * @FilePath: \GSG-ES6-ES11\38_对象扩展.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>38_对象扩展</title>
+</head>
+
+<body>
+    <script>
+        // 1. Object.is 判断两个值是否完全相等
+        console.log(Object.is(NaN, NaN));   // true
+        console.log(NaN === NaN);   // false
+
+        // 2. Object.assgin 对象的合并
+        const config1 = {
+            host: 'localhost',
+            port: 3305,
+            name: 'root'
+        }
+        const config2 = {
+            host: 'www.baidu.com',
+            port: 5500
+        }
+        console.log(Object.assign(config1, config2));   //{host: "www.baidu.com", port: 5500, name: "root"}
+
+        // 3. Object.setPrototypeOf 设置原型对象 Object.getPrototypeOf
+        const school = {
+            name: '尚硅谷'
+        }
+        const cities = {
+            xiaoqu: ['beijing', 'shanghai']
+        }
+        Object.setPrototypeOf(school, cities);
+        console.log(Object.getPrototypeOf(school));
+        console.log(school);
+    </script>
+</body>
+
+</html>

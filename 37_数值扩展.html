@@ -1,0 +1,63 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-24 10:08:42
+ * @LastEditTime: 2020-09-24 11:42:53
+ * @FilePath: \GSG-ES6-ES11\37_数值扩展.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>37_数值扩展</title>
+</head>
+
+<body>
+    <script>
+        // 1. Number.EPSILON 是 javaScript 标识的最小精度
+        console.log(0.1 + 0.2); //0.30000000000000004  不等于 0.3
+        function equal(a, b) {
+            if (Math.abs(a - b) < Number.EPSILON) {
+                return true;
+            } else {
+                return false
+            }
+        }
+        console.log(equal(0.1 + 0.2, 0.3)); //true
+
+        // 2. 二进制和八进制
+        let b = 0b1010;
+        let o = 0o777;
+        let d = 100;
+        let x = 0xff;
+        console.log(b, o, d, x);//10 511 100 255
+
+        // 3. Number.isFinite 检测一个数值是否为有限数
+        console.log(Number.isFinite(100));  // true
+        console.log(Number.isFinite(Infinity));  // false
+
+        // 4. Number.isNanN 检车一个数值是否为 NaN
+        console.log(Number.isNaN(123));
+
+        // 5. Number.parseInt Number.parseFloat字符串转数字
+        console.log(Number.parseInt('1324sdfjk'));  // 1324
+        console.log(Number.parseFloat('3.1324sdfjk'));  //3.1324
+
+        // 6. Number.isInteger 判断一个数是否为整数
+        console.log(Number.isInteger(5));   //true
+        console.log(Number.isInteger(34.5));    //false
+
+        // 7. Math.trunc 将数字的小数部分抹掉
+        console.log(Math.trunc(3.5));   // 3
+
+        // 8. Math.sign 判断一个数到底是正数 负数 还是零
+        console.log(Math.sign(100));    //1
+        console.log(Math.sign(-10));    //-1
+        console.log(Math.sign(0));  //0
+    </script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <!--
  * @Author: lu
  * @Date: 2020-09-23 16:01:41
- * @LastEditTime: 2020-09-23 16:07:53
+ * @LastEditTime: 2020-09-24 10:01:47
  * @FilePath: \GSG-ES6-ES11\35_类继承.html
  * @Description: 
 -->
@@ -42,6 +42,11 @@
             }
             playGame() {
                 console.log('游戏');
+            }
+            // 子类对父类方法的重写
+            // 子类不能调父类重名的方法
+            call() {
+                console.log('我可以进行视频通话');
             }
         }
 

@@ -1,0 +1,72 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-24 13:20:54
+ * @LastEditTime: 2020-09-27 16:09:26
+ * @FilePath: \GSG-ES6-ES11\39_模块化.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>39_模块化</title>
+</head>
+
+<body>
+    <script type="module">
+        /*
+        模块化是指将一个大的程序文件，拆分成许多小文件，然后将小文件组合起来。
+        1. 防止命名冲突
+        2. 代码复用
+        3. 高维护性
+        ES6 模块化语法
+        1. export 命令用于规定模块的对外接口
+        2. import 命令用于输入其他模块提供的功能
+         */
+
+        // 分别暴露
+
+        export let school = '123';
+        export function teach() {
+            console.log('我们可以教学');
+        }
+        import * as m1 from './js/m1.js';
+        console.log(m1.teach());
+
+        // 统一暴露
+        let school1 = '123';
+        function findJob() {
+            console.log('我们可以找工作');
+        }
+        export { school, findJob };
+        import * as m2 from './js/m2.js';
+        console.log(m2.findJob());
+
+        // 默认暴露
+        export default {
+            school: '123',
+            change: function () {
+                console.log('我们可以改变你！！');
+            }
+        }
+        import * as m3 from './js/m3.js';
+        console.log(m3.default.change());
+
+
+        // 通用方式
+        import * as m1 from './js/m1.js';
+
+        // 解构赋值方式
+        import { school, teach } from './js/m1.js';
+        import { school as guigu, findJob } from './js/m2.js';  // 重名的时候使用别名
+        import { default as m3 } from './js/m3.js';
+
+        // 渐变形式 针对默认暴露
+        import m3 from './js/m3.js'
+    </script>
+</body>
+
+</html>

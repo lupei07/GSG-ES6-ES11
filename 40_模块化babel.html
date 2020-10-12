@@ -1,0 +1,37 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-09-27 16:21:39
+ * @LastEditTime: 2020-09-27 16:29:21
+ * @FilePath: \GSG-ES6-ES11\40_模块化babel.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>40_模块化babel</title>
+</head>
+
+<body>
+    <!-- 
+        1. 安装工具 npm babel-cli babel-preset-env browserify(webpack) -D
+        2. npx babel src/js -d dist/js --presets-babel-preset-env
+        3. 打包 npx browserify dist/js/app.js -o dist/bundle.js 
+
+     -->
+    <!-- app.js -->
+    <!-- 
+        入口文件
+
+        引入模块文件
+        import * as m1 from './js/m1.js'
+        import * as m2 from './js/m2.js'
+        import * as m3 from './js/m3.js'    
+    -->
+    <script src="dist/boundle.js"></script>
+</body>
+
+</html>
