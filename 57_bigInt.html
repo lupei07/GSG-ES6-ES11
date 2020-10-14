@@ -1,0 +1,41 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-10-14 14:24:43
+ * @LastEditTime: 2020-10-14 14:29:19
+ * @FilePath: \GSG-ES6-ES11\57_bigInt.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>57_bigInt</title>
+</head>
+
+<body>
+    <script>
+        // 大整形
+        let n = 521n;
+        console.log(n, typeof (n)); //521n "bigint"
+
+        // 函数
+        let m = 123;
+        console.log(BigInt(m)); //123n
+        // console.log(BigInt(1.2));   //The number 1.2 cannot be converted to a BigInt because it is not an integer at BigInt
+
+        // 大数值运算
+        let max = Number.MAX_SAFE_INTEGER;  // 最大安全整数
+        console.log(max);   //9007199254740991
+        console.log(max + 1);   //9007199254740992
+        console.log(max + 2);   //9007199254740992
+
+        console.log(BigInt(max));   //9007199254740991n
+        console.log(BigInt(max) + BigInt(1));   //9007199254740992n
+        console.log(BigInt(max) + BigInt(2));   //9007199254740993n
+    </script>
+</body>
+
+</html>

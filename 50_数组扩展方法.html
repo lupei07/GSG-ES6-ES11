@@ -1,0 +1,33 @@
+<!--
+ * @Author: lu
+ * @Date: 2020-10-12 17:30:08
+ * @LastEditTime: 2020-10-12 17:34:23
+ * @FilePath: \GSG-ES6-ES11\50_数组扩展方法.html
+ * @Description: 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>50_数组扩展方法</title>
+</head>
+
+<body>
+    <script>
+        // flat 平
+        // 将多为数组转化为低位数组
+        const arr = [1, 2, 3, [4, 5, [6, 7, 8]]];
+        // 参数为深度 是一个数字
+        console.log(arr.flat(2));
+
+        // flatMap
+        const arr1 = [1, 2, 4, 5];
+        const result = arr1.flatMap(item => item * 10);
+        console.log(result);
+    </script>
+</body>
+
+</html>
